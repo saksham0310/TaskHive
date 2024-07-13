@@ -1,0 +1,11 @@
+<div class="main">
+    <h1>Hi!! Welcome</h1>
+    <div class="login-section">
+        <input [(ngModel)]="username" placeholder="Enter username or email">
+        <input [(ngModel)]="password"  placeholder="Enter password">
+        <button (click)="onSubmit()">Login</button>
+        <div class="signup-up">
+            <button routerLink="/sign-up">Click for sign-up</button>
+        </div>
+    </div>
+</div> 
