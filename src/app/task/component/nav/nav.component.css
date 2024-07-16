@@ -1,0 +1,31 @@
+.main {
+    background-color: black;
+    height: 70px;
+    width: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+    display: flex;
+}
+
+.section button {
+    background-color: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.section button:hover {
+    background-color: #007bff;
+    color: white;
+}
