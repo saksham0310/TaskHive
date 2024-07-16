@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { AuthService } from 'src/app/service/auth.service';
+import { SecurityService } from '../../service/security.service';
 
 @Component({
-  selector: 'app-sign-up',
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.css']
+  selector: 'app-changepassword',
+  templateUrl: './changepassword.component.html',
+  styleUrls: ['./changepassword.component.css']
 })
-export class SignUpComponent {
+export class ChangepasswordComponent {
   username:string='';
   password:string='';
-  constructor(private auth:AuthService){}
+  constructor(private auth:SecurityService){}
   
 
   onSubmit()

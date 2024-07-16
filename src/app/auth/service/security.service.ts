@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class SecurityService {
 
   IsValid:boolean=false;
   currUsername:String='saksham';
@@ -17,7 +17,7 @@ export class AuthService {
       {
         this.IsValid=true;
         this.user={username,password};
-        this.router.navigate(['/my-task']);
+        this.router.navigate(['/task-list']);
         return true;
       }
       return false;

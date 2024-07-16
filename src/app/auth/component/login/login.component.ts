@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from 'src/app/service/auth.service';
+import { SecurityService } from '../../service/security.service';
 
 @Component({
   selector: 'app-login',
@@ -7,10 +7,9 @@ import { AuthService } from 'src/app/service/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
   username:string='';
   password:string='';
-  constructor(private authService:AuthService){}
+  constructor(private authService:SecurityService){}
 
   onSubmit(){
     if(!this.authService.loginCheck(this.username,this.password))
