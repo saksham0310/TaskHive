@@ -4,18 +4,18 @@ import { TaskListComponent } from './component/task-list/task-list.component';
 import { TaskDetailsComponent } from './component/task-details/task-details.component';
 import { NavComponent } from './component/nav/nav.component';
 import { RouterModule } from '@angular/router';
-import { TaskCardsComponent } from './component/task-cards/task-cards.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     TaskListComponent,
     TaskDetailsComponent,
-    NavComponent,
-    TaskCardsComponent
+    NavComponent
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports:[
     TaskListComponent,

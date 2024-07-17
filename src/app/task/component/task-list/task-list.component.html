@@ -1,4 +1,28 @@
 <app-nav></app-nav>
-<div class="main">
-
+<div class="main-container">
+  <h1>Add Your Challenge</h1>
+  <ng-container *ngIf="showTaskBox">
+    <div class="task-form">
+        <input [(ngModel)]="newTaskName" placeholder="Name">
+        <input [(ngModel)]="TaskHours" type="number" placeholder="Hours">
+        <input [(ngModel)]="TaskMin" type="number" placeholder="Minutes">
+        <button (click)="SubmitNewTask()">Add</button>
+    </div>
+  </ng-container>
+    <ng-container *ngIf="!showTaskBox">
+    <button class="showAddTask-btn" (click)="displayTaskBox()">Click Here To Add Challenge</button>
+</ng-container>
+  
+  <div class="task-list">
+    <div *ngFor="let task of Tasks" class="task-card">
+      <div class="task-details">
+        <div class="task-name">{{ task.name }}</div>
+        <div class="task-time">{{task.hours}} hours : {{task.minutes}} minutes</div>
+      </div>
+      <div class="task-actions">
+        <button class="Start-btn">Start</button>
+        <button class="Done-btn">Done</button>
+      </div>
+    </div>
+  </div>
 </div>
