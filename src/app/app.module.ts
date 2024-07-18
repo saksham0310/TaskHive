@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { TaskModule } from './task/task.module';
-import { MyProfileModule } from './my-profile/my-profile.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +13,6 @@ import { MyProfileModule } from './my-profile/my-profile.module';
     BrowserModule,
     AuthModule,
     TaskModule,
-    MyProfileModule,
     AppRoutingModule
   ],
   providers: [],

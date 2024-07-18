@@ -57,4 +57,10 @@ export class TaskListComponent {
     this.TaskHours = null;
     this.TaskMin = null;
   }
+
+  removeTask(id:number):void{
+    this.taskService.deleteTask(id)
+    this.Tasks=this.taskService.getAllTask();
+  }
+
 }

@@ -20,8 +20,8 @@
         <div class="task-time">{{task.hours}} hours : {{task.minutes}} minutes</div>
       </div>
       <div class="task-actions">
-        <button class="Start-btn">Start</button>
-        <button class="Done-btn">Done</button>
+        <button [routerLink]="['/task',task.id]" class="Start-btn">Start</button>
+        <button (click)="removeTask(task.id)"class="Done-btn">Done</button>
       </div>
     </div>
   </div>

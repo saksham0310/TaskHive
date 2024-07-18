@@ -1,1 +1,19 @@
-<p>task-details works!</p>
+<app-nav></app-nav>
+<div class="main">
+  <div class="display-task" *ngIf="task">
+    <div class="task-value task-name">{{task.name}}</div>
+    <div class="task-time">
+      <span>{{task.hours}} hours</span>
+      <span> : {{task.minutes}} minutes</span>
+    </div>
+  </div>
+  <div class="display-subtask">
+    <div class="add-task">
+      <input [(ngModel)]="des" type="text" placeholder="Enter work">
+      <button (click)="addTask()">Add</button>
+    </div>
+    <div *ngFor="let task of subTask">
+      <div class="subtask-value">{{task.description}}</div>
+    </div>
+  </div>
+</div>

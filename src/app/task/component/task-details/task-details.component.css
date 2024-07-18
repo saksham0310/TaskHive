@@ -1,0 +1,101 @@
+/* Main container styling */
+.main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #121212;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+  }
+  
+  /* Styling for task details as a banner */
+  .display-task {
+    margin-bottom: 20px;
+    padding: 30px;
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .task-name {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  .task-time {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  /* Styling for subtask section */
+  .display-subtask {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .add-task {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .add-task input {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: border-color 0.3s;
+    background-color: #2d2d2d;
+    color: #ffffff;
+  }
+  
+  .add-task input::placeholder {
+    color: #aaa;
+  }
+  
+  .add-task input:focus {
+    border-color: #8e2de2;
+  }
+  
+  .add-task button {
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #8e2de2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .add-task button:hover {
+    background-color: #4a00e0;
+  }
+  
+  .subtask-value {
+    padding: 12px;
+    font-size: 16px;
+    color: #ddd;
+    background-color: #2d2d2d;
+    border-left: 4px solid #8e2de2;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  
+  .subtask-value:hover {
+    background-color: #3d3d3d;
+    border-color: #4a00e0;
+  }
