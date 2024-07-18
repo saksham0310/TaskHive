@@ -63,4 +63,9 @@ export class TaskListComponent {
     this.Tasks=this.taskService.getAllTask();
   }
 
+  DoneTask()
+  {
+    
+  }
+
 }

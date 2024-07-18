@@ -21,7 +21,8 @@
       </div>
       <div class="task-actions">
         <button [routerLink]="['/task',task.id]" class="Start-btn">Start</button>
-        <button (click)="removeTask(task.id)"class="Done-btn">Done</button>
+        <button (click)="DoneTask()" class="Done-btn">Done</button>
+        <button (click)="removeTask(task.id)"class="Delete-btn">Delete</button>
       </div>
     </div>
   </div>

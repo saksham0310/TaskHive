@@ -78,20 +78,26 @@
     margin-right: 5px;
     padding: 5px 10px;
   }
-    
+  
+  .task-actions .Delete-btn {
+    background-color: #b40b0b;
+  }
+  
+  .task-actions .Delete-btn:hover {
+    background-color: #6f0606;
+  }
+  
   .task-actions .Done-btn:hover {
     background-color: #218838;
   }
-
-  .task-actions .Start-btn{
+  
+  .task-actions .Start-btn {
     background-color: #ff8c00;
   }
-
- .showAddTask-btn{
-  width: 100%;
+  
+  .showAddTask-btn {
+    width: 100%;
     background-color: #ff8c00;
     color: white;
     padding: 7px;
- }
-  
-  
+  }
