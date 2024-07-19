@@ -16,6 +16,10 @@ export class TaskDetailsComponent {
   des:string='';
   TaskID:number=0;
 
+  hours:number=0;
+  minutes:number=0;
+  seconds:number=0;
+
   constructor(private route:ActivatedRoute,private service:TaskServiceService){}
 
   ngOnInit():void{
@@ -42,4 +46,7 @@ export class TaskDetailsComponent {
     doneTask.done=!doneTask.done;
   }
 
+  DeleteBtn(deleteTask:Subtask){
+    this.subTask=this.subTask.filter(task=>task!==deleteTask)
+  }
 }

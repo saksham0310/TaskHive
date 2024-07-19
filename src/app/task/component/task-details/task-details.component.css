@@ -1,133 +1,257 @@
-/* Main container styling */
-.main {
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: #121212;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    color: #ffffff;
-  }
-  
-  /* Styling for task details as a banner */
-  .display-task {
-    margin-bottom: 20px;
-    padding: 30px;
-    background: linear-gradient(135deg, #8e2de2, #4a00e0);
+    background-color: #333;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     color: white;
-    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    height: 80vh;
+    margin-top: 20px;
+}
+
+.main {
+    flex: 1;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
     text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.display-task {
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  .task-name {
+    text-align: center;
+}
+
+.task-name {
     font-size: 28px;
     font-weight: bold;
-    margin-bottom: 15px;
-  }
-  
-  .task-time {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.task-time {
+    font-size: 20px;
     font-weight: bold;
-  }
-  
-  /* Styling for subtask section */
-  .display-subtask {
-    margin-top: 20px;
+}
+
+.display-subtask {
     padding: 20px;
     background-color: #1f1f1f;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  .add-task {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .add-task input {
     flex: 1;
-    padding: 12px;
-    font-size: 16px;
+    overflow-y: auto;
+    max-height: 500px; /* Adjust the height as needed */
+}
+
+.add-task {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.add-task input {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
     border: 2px solid #ccc;
     border-radius: 5px;
-    margin-right: 10px;
-    transition: border-color 0.3s;
     background-color: #2d2d2d;
-    color: #ffffff;
-  }
-  
-  .add-task input::placeholder {
+    color: white;
+}
+
+.add-task input::placeholder {
     color: #aaa;
-  }
-  
-  .add-task input:focus {
-    border-color: #8e2de2;
-  }
-  
-  .add-task button {
-    padding: 12px 20px;
-    font-size: 16px;
-    color: #fff;
+}
+
+.add-task button {
+    padding: 10px 20px;
     background-color: #8e2de2;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-  }
-  
-  .add-task button:hover {
+}
+
+.add-task button:hover {
     background-color: #4a00e0;
-  }
-  
-  .subtask-card {
+}
+
+.subtask-card {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px;
-    font-size: 16px;
-    color: #ddd;
     background-color: #2d2d2d;
+    padding: 10px;
     border-left: 4px solid #8e2de2;
     border-radius: 5px;
     margin-bottom: 10px;
     transition: background-color 0.3s, border-color 0.3s;
-  }
-  
-  .subtask-card:hover {
+}
+
+.subtask-card:hover {
     background-color: #3d3d3d;
     border-color: #4a00e0;
-  }
-  
-  .subtask-value.done {
+}
+
+.subtask-value {
+    flex: 1;
+    color: #ddd;
+}
+
+.subtask-value.done {
     text-decoration: line-through;
     color: #777;
-  }
-  
-  .toggleButton {
+}
+
+.toggleButton, .Delete-btn {
     padding: 6px 12px;
-    font-size: 14px;
-    color: #fff;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggleButton {
     background-color: #ff8c00;
+}
+
+.toggleButton.done {
+    background-color: #28a745;
+}
+
+.toggleButton:hover {
+    background-color: #e07b00;
+}
+
+.toggleButton.done:hover {
+    background-color: #218838;
+}
+
+.Delete-btn {
+    background-color: #b40b0b;
+}
+
+.Delete-btn:hover {
+    background-color: #6f0606;
+}
+
+/* Timer and Button Section */
+.sidebar {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.timer-section {
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.display-section {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.timer-btn-section {
+    display: flex;
+    justify-content: space-around;
+}
+
+.timer-btn-section button {
+    flex: 1;
+    padding: 10px;
+    margin: 0 5px;
+    background-color: #8e2de2;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-left: 10px;
-  }
-  
-  .toggleButton:hover {
-    background-color: #e07b00;
-  }
-  
-  .toggleButton.done {
+}
+
+.timer-btn-section button:hover {
+    background-color: #4a00e0;
+}
+
+.Start-btn {
     background-color: #28a745;
-  }
-  
-  .toggleButton.done:hover {
+}
+
+.Start-btn:hover {
     background-color: #218838;
-  }
+}
+
+.Pause-btn {
+    background-color: #ff8c00;
+}
+
+.Pause-btn:hover {
+    background-color: #e07b00;
+}
+
+.Stop-btn {
+    background-color: #b40b0b;
+}
+
+.Stop-btn:hover {
+    background-color: #6f0606;
+}
+
+.Task-done-back-button-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Task-done-back-button-section button {
+    flex: 1;
+    padding: 10px;
+    margin: 0 5px;
+    background-color: #8e2de2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.Task-done-back-button-section button:hover {
+    background-color: #4a00e0;
+}
+
+.Task-Delete-btn {
+    background-color: #b40b0b;
+}
+
+.Task-Delete-btn:hover {
+    background-color: #6f0606;
+}
+
+.Task-Back-btn {
+    background-color: #28a745;
+}
+
+.Task-Back-btn:hover {
+    background-color: #218838;
+}

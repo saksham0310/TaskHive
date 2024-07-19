@@ -9,9 +9,9 @@
         <button (click)="SubmitNewTask()">Add</button>
     </div>
   </ng-container>
-    <ng-container *ngIf="!showTaskBox">
+  <ng-container *ngIf="!showTaskBox">
     <button class="showAddTask-btn" (click)="displayTaskBox()">Click Here To Add Challenge</button>
-</ng-container>
+  </ng-container>
   
   <div class="task-list">
     <div *ngFor="let task of Tasks" class="task-card">

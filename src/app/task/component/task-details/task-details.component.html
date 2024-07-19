@@ -1,20 +1,38 @@
 <app-nav></app-nav>
-<div class="main">
-  <div class="display-task" *ngIf="task">
-    <div class="task-value task-name">{{task.name}}</div>
-    <div class="task-time">
-      <span>{{task.hours}} hours</span>
-      <span> : {{task.minutes}} minutes</span>
+<div class="container">
+    <div class="main">
+        <div class="display-task" *ngIf="task">
+            <div class="task-value task-name">{{task.name}}</div>
+            <div class="task-time">
+                <span>{{task.hours}} hours : {{task.minutes}} minutes</span>
+            </div>
+        </div>
+        <div class="add-task">
+            <input [(ngModel)]="des" type="text" placeholder="Enter work">
+            <button (click)="addTask()">Add</button>
+        </div>
+        <div class="display-subtask">
+            <div *ngFor="let task of subTask" class="subtask-card">
+                <div [class.done]="task.done" class="subtask-value">{{task.description}}</div>
+                <button class="toggleButton" [class.done]="task.done" (click)="toggleDone(task)">{{task.done ? "Undo" : "Done"}}</button>
+                <button class="Delete-btn" (click)="DeleteBtn(task)">Delete</button>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="display-subtask">
-    <div class="add-task">
-      <input [(ngModel)]="des" type="text" placeholder="Enter work">
-      <button (click)="addTask()">Add</button>
+    <div class="sidebar">
+        <div class="timer-section">
+            <div class="display-section">
+                <span>{{hours}} hours : {{minutes}} minutes : {{seconds}} seconds</span>
+            </div>
+            <div class="timer-btn-section">
+                <button class="Start-btn" >Start</button>
+                <button class="Pause-btn" >Pause</button>
+                <button class="Stop-btn" >Stop</button>
+            </div>
+        </div>
+        <div class="Task-done-back-button-section">
+            <button class="Task-Delete-btn" >Delete</button>
+            <button class="Task-Back-btn" >Back</button>
+        </div>
     </div>
-    <div *ngFor="let task of subTask" class="subtask-card">
-      <div [class.done]="task.done" class="subtask-value">{{task.description}}</div>
-      <button class="toggleButton" [class.done]="task.done" (click)="toggleDone(task)">{{task.done ? "Undo" :"Done"}}</button>
-    </div>
-  </div>
 </div>

@@ -2,11 +2,14 @@
     background-color: #333;
     padding: 20px;
     border-radius: 15px;
-    width: 500px;
+    width: 600px; 
     margin: 50px auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     color: white;
-  }
+    display: flex;
+    flex-direction: column;
+    max-height: 80vh; 
+}
   
   h1 {
     text-align: center;
@@ -47,8 +50,26 @@
     background-color: #ff8c00;
   }
   
+  /* Add Task button styling */
+  .showAddTask-btn {
+    width: 100%;
+    background-color: #ff8c00;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .showAddTask-btn:hover {
+    background-color: #e07b00;
+  }
+  
   .task-list {
     margin-top: 20px;
+    overflow-y: auto;
+    max-height: calc(100vh - 250px); 
+    padding-right: 10px;
   }
   
   .task-card {
@@ -59,6 +80,7 @@
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
   
   .task-details {
@@ -106,19 +128,6 @@
   }
   
   .task-actions .Start-btn:hover {
-    background-color: #e07b00;
-  }
-  
-  .showAddTask-btn {
-    width: 100%;
-    background-color: #ff8c00;
-    color: white;
-    padding: 7px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .showAddTask-btn:hover {
     background-color: #e07b00;
   }
   
