@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TaskServiceService } from '../../service/task-service.service';
-import { Task } from '../../service/task.model';
+import { Task } from '../../interfaces/task.model';
 
 @Component({
   selector: 'app-task-list',
@@ -15,6 +15,7 @@ export class TaskListComponent {
   TaskMin:number | null =null;
   index:number=1;
   Tasks: Task[]=[];
+  Total:number=0;
 
   constructor(private taskService:TaskServiceService){}
 
@@ -32,22 +33,25 @@ export class TaskListComponent {
    }
 
    SubmitNewTask():void{
-    if(this.newTaskName.trim()){
-    const task:Task={
-      id:this.index,
-      name:this.newTaskName,
-      hours:this.TaskHours || 0,
-      minutes:this.TaskMin || 0
-    }
-    this.taskService.addTask(task)
-    this.index++;
-    this.showTaskBox=false;
-    this.Tasks=this.taskService.getAllTask();
-    }
+    if(this.newTaskName.trim())
+      {
+        const task:Task={
+          id:this.index,
+          name:this.newTaskName,
+          hours:this.TaskHours || 0,
+          minutes:this.TaskMin || 0,
+          done:false
+        }
+        this.taskService.addTask(task)
+        this.index++;
+        this.showTaskBox=false;
+        this.Tasks=this.taskService.getAllTask();
+        this.Total=this.Tasks.length;
+      }
     else
-    {
+      {
       alert('not create');
-    }
+      }
     this.resetTaskInputs();
     this.CloseTaskBox();
    }
@@ -61,11 +65,16 @@ export class TaskListComponent {
   removeTask(id:number):void{
     this.taskService.deleteTask(id)
     this.Tasks=this.taskService.getAllTask();
+    this.Total=this.Tasks.length;
   }
 
-  DoneTask()
+  DoneTask(id:number)
   {
-    
+    const currTask=this.Tasks.find(task=>task.id===id);
+    if(currTask)
+      {
+        currTask.done=!currTask.done;
+      }
   }
 
 }

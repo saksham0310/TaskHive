@@ -3,4 +3,5 @@ export interface Task{
   name:string;
   hours:number | null;
   minutes:number | null;
+  done:boolean;
 }

@@ -12,8 +12,9 @@
       <input [(ngModel)]="des" type="text" placeholder="Enter work">
       <button (click)="addTask()">Add</button>
     </div>
-    <div *ngFor="let task of subTask">
-      <div class="subtask-value">{{task.description}}</div>
+    <div *ngFor="let task of subTask" class="subtask-card">
+      <div [class.done]="task.done" class="subtask-value">{{task.description}}</div>
+      <button class="toggleButton" [class.done]="task.done" (click)="toggleDone(task)">{{task.done ? "Undo" :"Done"}}</button>
     </div>
   </div>
 </div>

@@ -84,7 +84,10 @@
     background-color: #4a00e0;
   }
   
-  .subtask-value {
+  .subtask-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 12px;
     font-size: 16px;
     color: #ddd;
@@ -95,7 +98,36 @@
     transition: background-color 0.3s, border-color 0.3s;
   }
   
-  .subtask-value:hover {
+  .subtask-card:hover {
     background-color: #3d3d3d;
     border-color: #4a00e0;
+  }
+  
+  .subtask-value.done {
+    text-decoration: line-through;
+    color: #777;
+  }
+  
+  .toggleButton {
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #ff8c00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+  }
+  
+  .toggleButton:hover {
+    background-color: #e07b00;
+  }
+  
+  .toggleButton.done {
+    background-color: #28a745;
+  }
+  
+  .toggleButton.done:hover {
+    background-color: #218838;
   }

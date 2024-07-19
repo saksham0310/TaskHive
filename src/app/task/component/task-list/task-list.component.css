@@ -26,6 +26,12 @@
     border: none;
     border-radius: 5px;
     margin-right: 10px;
+    background-color: #555;
+    color: white;
+  }
+  
+  .task-form input::placeholder {
+    color: #aaa;
   }
   
   .task-form button {
@@ -87,6 +93,10 @@
     background-color: #6f0606;
   }
   
+  .task-actions .Done-btn {
+    background-color: #28a745;
+  }
+  
   .task-actions .Done-btn:hover {
     background-color: #218838;
   }
@@ -95,9 +105,29 @@
     background-color: #ff8c00;
   }
   
+  .task-actions .Start-btn:hover {
+    background-color: #e07b00;
+  }
+  
   .showAddTask-btn {
     width: 100%;
     background-color: #ff8c00;
     color: white;
     padding: 7px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .showAddTask-btn:hover {
+    background-color: #e07b00;
+  }
+  
+  /* Styling for done tasks */
+  .task-name.done {
+    text-decoration: line-through;
+    color: #777;
+  }
+  
+  .task-time.done {
+    color: #777;
   }

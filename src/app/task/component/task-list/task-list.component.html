@@ -1,6 +1,6 @@
 <app-nav></app-nav>
 <div class="main-container">
-  <h1>Add Your Challenge</h1>
+  <h1>Add Your Challenge ({{Total}})</h1>
   <ng-container *ngIf="showTaskBox">
     <div class="task-form">
         <input [(ngModel)]="newTaskName" placeholder="Name">
@@ -16,12 +16,12 @@
   <div class="task-list">
     <div *ngFor="let task of Tasks" class="task-card">
       <div class="task-details">
-        <div class="task-name">{{ task.name }}</div>
+        <div [class.done]="task.done" class="task-name">{{ task.name }}</div>
         <div class="task-time">{{task.hours}} hours : {{task.minutes}} minutes</div>
       </div>
       <div class="task-actions">
-        <button [routerLink]="['/task',task.id]" class="Start-btn">Start</button>
-        <button (click)="DoneTask()" class="Done-btn">Done</button>
+        <button *ngIf="!task.done" [routerLink]="['/task',task.id]" class="Start-btn">Start</button>
+        <button (click)="DoneTask(task.id)" class="Done-btn">{{task.done? "Undo" : "Done" }}</button>
         <button (click)="removeTask(task.id)"class="Delete-btn">Delete</button>
       </div>
     </div>

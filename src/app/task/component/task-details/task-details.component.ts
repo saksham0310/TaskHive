@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TaskServiceService } from '../../service/task-service.service';
-import { Task } from '../../service/task.model';
-import { Subtask } from '../../subtask.module';
+import { Task } from '../../interfaces/task.model';
+import { Subtask } from '../../interfaces/subtask.module';
 
 @Component({
   selector: 'app-task-details',
@@ -28,11 +28,18 @@ export class TaskDetailsComponent {
       {
         const newSubTask={
           id:this.TaskID,
-          description:this.des
+          description:this.des,
+          done:false
         }
         this.subTask.push(newSubTask);
         this.TaskID++;
         this.des='';
       }
   }
+
+  toggleDone(doneTask:Subtask):void
+  {
+    doneTask.done=!doneTask.done;
+  }
+
 }
