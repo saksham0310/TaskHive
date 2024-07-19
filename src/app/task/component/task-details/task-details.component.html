@@ -22,17 +22,20 @@
     <div class="sidebar">
         <div class="timer-section">
             <div class="display-section">
-                <span>{{hours}} hours : {{minutes}} minutes : {{seconds}} seconds</span>
+                <span style="padding-right: 20px;">{{hours}} hours : {{minutes}} minutes </span>
+                <span>{{seconds}} seconds</span>
             </div>
             <div class="timer-btn-section">
-                <button class="Start-btn" >Start</button>
-                <button class="Pause-btn" >Pause</button>
-                <button class="Stop-btn" >Stop</button>
+                <button class="Start-btn" (click)="startTimer()">Start</button>
+                <button class="Stop-btn" (click)="StopTimer()">Stop</button>
+                <button class="Pause-btn" (click)="resetTimer()">Reset</button>
             </div>
         </div>
+        <img class="image" src="assets\images\pics.jpg" alt="motive">
         <div class="Task-done-back-button-section">
-            <button class="Task-Delete-btn" >Delete</button>
-            <button class="Task-Back-btn" >Back</button>
+            <button class="Done-btn" (click)="doneTask()" >DONE</button>
+            <button class="Task-Delete-btn" (click)="deleteTask()" >Delete</button>
+            <button class="Task-Back-btn" routerLink="/task-list">Back</button>
         </div>
     </div>
 </div>

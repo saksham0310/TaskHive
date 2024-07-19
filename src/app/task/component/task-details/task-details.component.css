@@ -255,3 +255,8 @@ h1 {
 .Task-Back-btn:hover {
     background-color: #218838;
 }
+
+.image{
+  height: 335px;
+  border-radius: 5px;
+}
