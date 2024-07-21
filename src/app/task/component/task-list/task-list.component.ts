@@ -19,8 +19,9 @@ export class TaskListComponent {
 
   constructor(private taskService:TaskServiceService){}
 
-  OnInit():void{
+  ngOnInit():void{
     this.Tasks=this.taskService.getAllTask();
+    this.Total=this.Tasks.length;
   }
 
    displayTaskBox():void{
